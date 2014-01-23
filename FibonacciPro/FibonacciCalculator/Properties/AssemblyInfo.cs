@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("FibonacciPro")]
+[assembly: AssemblyTitle("FibonacciCalculator")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FibonacciPro")]
+[assembly: AssemblyProduct("FibonacciCalculator")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 
-[assembly: Guid("2f6e29dc-7b15-46d6-8531-c99089f05686")]
+[assembly: Guid("fac083f5-fffa-4cc6-8ab8-6f47e84050a1")]
 
 // Version information for an assembly consists of the following four values:
 //
