@@ -40,8 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseFibonacciInput.cs" />
+    <Compile Include="DirectFibonacciOutput.cs" />
+    <Compile Include="InteractiveFibonacciInput.cs" />
+    <Compile Include="IFibonacciOutput.cs" />
+    <Compile Include="PlainTextFibonacciOutput.cs" />
+    <Compile Include="XMLFibonacciInput.cs" />
     <Compile Include="FibonacciCalculator.cs" />
+    <Compile Include="FibonacciResultSet.cs" />
+    <Compile Include="IFibonacciCalculator.cs" />
+    <Compile Include="IFibonacciInput.cs" />
+    <Compile Include="PlainTextFibonacciInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLFibonacciOutput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

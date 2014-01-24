@@ -11,7 +11,7 @@ namespace FibonacciPro
         [Option('o', "output", Required = false, HelpText = "Output file to write.")]
         public string OutputFile { get; set; }
 
-        [Option('t', null, HelpText = "Function in interactive mode.")]
+        [Option('t', "interactive", HelpText = "Function in interactive mode.")]
         public bool InteractiveMode { get; set; }
 
         [ValueOption(0)]

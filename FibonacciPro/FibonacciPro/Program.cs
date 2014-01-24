@@ -1,6 +1,12 @@
 ﻿using System;
 using System.Numerics;
 using CommandLine;
+using System.IO;
+using System.Linq;
+using System.Xml.Linq;
+using FibonacciCalculator;
+using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace FibonacciPro
 {
@@ -9,55 +15,80 @@ namespace FibonacciPro
         private static void Main(string[] args)
         {
             var options = new CliOptions();
-            if (Parser.Default.ParseArguments(args, options))
+
+            // parser fail case
+            if (!Parser.Default.ParseArguments(args, options))
             {
-                int numVal = -1;
-                if (args.Length == 0 || (options.InputFile == null && options.InputNumber == null))
-                {
-                    Console.Write(options.GetUsage());
-                    Environment.Exit(0);
-                }
-
-                if (options.InputFile == null)
-                {
-                    // attempt to parse InputNumber
-                    numVal = ParseStringArgument(options.InputNumber);
-                }
-                else
-                {
-                    // get numVal from input
-                    numVal = 5;
-                }
-
-                var calc = new FibonacciCalculator.FibonacciCalculator();
-                BigInteger[] results = calc.Compute(numVal);
-
-                for (int i = 0; i < numVal; i++)
-                {
-                    Console.WriteLine(results[i]);
-                }
+                Console.Write(options.GetUsage());
+                Environment.Exit(1);
             }
+
+            // no input case
+            if (args.Length == 0 || (options.InputFile == null && options.InputNumber == null && options.InteractiveMode == false))
+            {
+                Console.Write(options.GetUsage());
+                Environment.Exit(1);
+            }
+
+            int numVal = GetInputValue(options);
+
+            // negative number case
+            if (numVal < 0)
+            {
+                Console.WriteLine("Number must be positive.");
+                Environment.Exit(1);
+            }
+
+            var calc = new FibonacciCalculator.FibonacciCalculator();
+            FibonacciResultSet results = calc.Compute(numVal);
+
+            HandleOutput(options, results);
         }
 
-        private static int ParseStringArgument(string input)
+        private static int GetInputValue(CliOptions options)
         {
-            int numVal = -1;
-            try
+            IFibonacciInput inputMethod;
+
+            if (options.InteractiveMode)
             {
-                numVal = Convert.ToInt32(input);
+                inputMethod = new InteractiveFibonacciInput();
             }
-            catch (FormatException)
+            else if (options.InputFile == null)
             {
-                Console.WriteLine("Input string is not a numbers.");
-                Environment.Exit(0);
+                // attempt to parse InputNumber
+                return BaseFibonacciInput.ParseStringArgument(options.InputNumber);
             }
-            catch (OverflowException)
+            else if (Path.GetExtension(options.InputFile) == ".xml")
             {
-                Console.WriteLine("The number is too large.");
-                Environment.Exit(0);
+                inputMethod = new XMLFibonacciInput(options.InputFile);
+            }
+            else
+            {
+                inputMethod = new PlainTextFibonacciInput(options.InputFile);
             }
 
-            return numVal;
+            return inputMethod.GetValue();
         }
+
+        private static void HandleOutput(CliOptions options, FibonacciResultSet resultSet)
+        {
+            IFibonacciOutput outputMethod;
+
+            if (options.OutputFile == null)
+            {
+                outputMethod = new DirectFibonacciOutput();
+            }
+            else if (Path.GetExtension(options.OutputFile) == ".xml")
+            {
+                outputMethod = new XMLFibonacciOutput(options.OutputFile);
+            }
+            else
+            {
+                outputMethod = new PlainTextFibonacciOutput(options.OutputFile);
+            }
+
+            outputMethod.WriteResult(resultSet);
+        }
+
     }
 }

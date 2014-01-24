@@ -2,23 +2,23 @@
 
 namespace FibonacciCalculator
 {
-    public class FibonacciCalculator
+    public class FibonacciCalculator : IFibonacciCalculator
     {
-        public BigInteger[] Compute(int len)
+        public FibonacciResultSet Compute(int len)
         {
             var results = new BigInteger[len];
 
             // zero case
             if (len == 0)
             {
-                return results;
+                return new FibonacciResultSet { Results = results };
             }
 
             // one case
             results[0] = 0;
             if (len == 1)
             {
-                return results;
+                return new FibonacciResultSet { Results = results };
             }
 
             // compute values
@@ -28,7 +28,9 @@ namespace FibonacciCalculator
                 results[i] = results[i - 1] + results[i - 2];
             }
 
-            return results;
+            FibonacciResultSet resultSet = new FibonacciResultSet { Results = results };
+
+            return resultSet;
         }
     }
 }
