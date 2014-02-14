@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Numerics;
 
 namespace FibonacciCalculator
 {
@@ -6,6 +7,11 @@ namespace FibonacciCalculator
     {
         public FibonacciResultSet Compute(int len)
         {
+            if (len < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
             var results = new BigInteger[len];
 
             // zero case
