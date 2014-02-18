@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseFibonacciInput.cs" />
+    <Compile Include="InvalidFibonacciInputException.cs" />
     <Compile Include="DirectFibonacciOutput.cs" />
     <Compile Include="InteractiveFibonacciInput.cs" />
     <Compile Include="IFibonacciOutput.cs" />

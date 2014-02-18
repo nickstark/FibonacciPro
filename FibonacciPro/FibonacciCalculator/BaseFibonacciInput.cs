@@ -20,12 +20,12 @@ namespace FibonacciCalculator
             catch (FormatException)
             {
                 Console.WriteLine("Input is not a number.");
-                Environment.Exit(0);
+                throw new InvalidFibonacciInputException();
             }
             catch (OverflowException)
             {
                 Console.WriteLine("The number is too large.");
-                Environment.Exit(0);
+                throw new InvalidFibonacciInputException();
             }
 
             return numVal;
@@ -36,7 +36,7 @@ namespace FibonacciCalculator
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("The input file does not exist");
-                Environment.Exit(1);
+                throw new InvalidFibonacciInputException();
             }
         }
     }

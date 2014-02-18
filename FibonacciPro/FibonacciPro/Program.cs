@@ -39,7 +39,16 @@ namespace FibonacciPro
                 Environment.Exit(1);
             }
 
-            var calc = new FibonacciCalculator.FibonacciCalculator();
+            FibonacciCalculator.FibonacciCalculator calc = null;
+
+            try
+            {
+                calc = new FibonacciCalculator.FibonacciCalculator();
+            }
+            catch (InvalidFibonacciInputException)
+            {
+                Environment.Exit(1);
+            }
             FibonacciResultSet results = calc.Compute(numVal);
 
             HandleOutput(options, results);

@@ -12,6 +12,10 @@ namespace FibonacciCalculator
 
         public BigInteger GetResult(int index)
         {
+            if (index < 0 || index >= Results.Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
             return Results[index];
         }
 
