@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace FibonacciCalculator
@@ -26,20 +27,27 @@ namespace FibonacciCalculator
         {
             CheckFileExistance(filePath);
 
-            XDocument input = XDocument.Load(filePath);
+            XDocument input = null;
+
+            try
+            {
+                input = XDocument.Load(filePath);
+            }
+            catch (XmlException)
+            {
+                throw new InvalidFibonacciInputException("Unable to read XML document");
+            }
 
             if (input == null)
             {
-                Console.WriteLine("Unable to read XML document");
-                Environment.Exit(1);
+                throw new InvalidFibonacciInputException("Unable to read XML document");
             }
 
             XElement fibInput = input.Element("fibinput");
 
             if (fibInput == null)
             {
-                Console.WriteLine("Unable to find fibinput in XML document");
-                Environment.Exit(1);
+                throw new InvalidFibonacciInputException("Unable to find fibinput in XML document");
             }
 
             return ParseStringArgument(fibInput.Value);

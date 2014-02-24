@@ -55,12 +55,31 @@
     <Compile Include="PlainTextFibonacciInputTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FibonacciResultSetTest.cs" />
+    <Compile Include="XMLFibonacciInputTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FibonacciCalculator\FibonacciCalculator.csproj">
       <Project>{d7a4403f-503e-49b3-9b76-fa897141e6ad}</Project>
       <Name>FibonacciCalculator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TestFiles\empty.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\huge.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\invalid.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\valid.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\valid.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -30,7 +30,16 @@ namespace FibonacciPro
                 Environment.Exit(1);
             }
 
-            int numVal = GetInputValue(options);
+            int numVal = 0;
+            try
+            {
+                numVal = GetInputValue(options);
+            }
+            catch (InvalidFibonacciInputException e)
+            {
+                Console.WriteLine(e.Message);
+                Environment.Exit(1);
+            }
 
             // negative number case
             if (numVal < 0)
@@ -39,16 +48,7 @@ namespace FibonacciPro
                 Environment.Exit(1);
             }
 
-            FibonacciCalculator.FibonacciCalculator calc = null;
-
-            try
-            {
-                calc = new FibonacciCalculator.FibonacciCalculator();
-            }
-            catch (InvalidFibonacciInputException)
-            {
-                Environment.Exit(1);
-            }
+            FibonacciCalculator.FibonacciCalculator calc = new FibonacciCalculator.FibonacciCalculator();
             FibonacciResultSet results = calc.Compute(numVal);
 
             HandleOutput(options, results);

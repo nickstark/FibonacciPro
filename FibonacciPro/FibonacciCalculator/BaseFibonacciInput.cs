@@ -19,13 +19,11 @@ namespace FibonacciCalculator
             }
             catch (FormatException)
             {
-                Console.WriteLine("Input is not a number.");
-                throw new InvalidFibonacciInputException();
+                throw new InvalidFibonacciInputException("Input is not a number.");
             }
             catch (OverflowException)
             {
-                Console.WriteLine("The number is too large.");
-                throw new InvalidFibonacciInputException();
+                throw new InvalidFibonacciInputException("The number is too large.");
             }
 
             return numVal;
@@ -35,8 +33,7 @@ namespace FibonacciCalculator
         {
             if (!File.Exists(filePath))
             {
-                Console.WriteLine("The input file does not exist");
-                throw new InvalidFibonacciInputException();
+                throw new InvalidFibonacciInputException("The input file does not exist");
             }
         }
     }

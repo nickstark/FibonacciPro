@@ -11,5 +11,9 @@ namespace FibonacciCalculator
         public InvalidFibonacciInputException()
         {
         }
+
+        public InvalidFibonacciInputException(string message) : base(message)
+        {
+        }
     }
 }
