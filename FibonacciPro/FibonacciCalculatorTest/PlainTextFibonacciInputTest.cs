@@ -48,9 +48,9 @@ namespace FibonacciCalculatorTest
         public void ValidInput()
         {
             int expected = 1;
-
             string filePath = Environment.CurrentDirectory + "\\TestFiles\\valid.txt";
             PlainTextFibonacciInput testInput = new PlainTextFibonacciInput(filePath);
+
             int actual = testInput.GetValue();
 
             Assert.AreEqual(expected, actual);

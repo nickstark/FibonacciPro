@@ -33,6 +33,7 @@ namespace FibonacciCalculatorTest
             // output
             FibonacciResultSet results = _calculator.Compute(4);
             _fibWriter.WriteResult(results);
+
             string testFile = Environment.CurrentDirectory + "\\TestFiles\\small-output.xml";
 
             bool isEqual = isFileEqual(testFile);

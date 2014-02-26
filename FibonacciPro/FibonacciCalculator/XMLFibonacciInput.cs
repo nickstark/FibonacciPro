@@ -33,9 +33,9 @@ namespace FibonacciCalculator
             {
                 input = XDocument.Load(filePath);
             }
-            catch (XmlException)
+            catch (XmlException e)
             {
-                throw new InvalidFibonacciInputException("Unable to read XML document");
+                throw new InvalidFibonacciInputException("Unable to read XML document", e);
             }
 
             if (input == null)
