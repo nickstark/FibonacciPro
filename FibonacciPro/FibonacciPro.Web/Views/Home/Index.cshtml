@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Welcome to the Fibonacci Calculator</h1>
+
+@using (Html.BeginForm("Calculate", "Home"))
+{
+    <label for="num">Number: </label>
+    <input type="number" id="num" name="num" required />
+    
+    <button type="submit">Calculate</button>
+}

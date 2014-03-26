@@ -18,13 +18,13 @@ namespace FibonacciCalculatorTest
         }
 
         private PlainTextFibonacciOutput _fibWriter;
-        private FibonacciCalculator.FibonacciCalculator _calculator;
+        private FibonacciCalculator.Calculator _calculator;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _fibWriter = new PlainTextFibonacciOutput(_testFilePath);
-            _calculator = new FibonacciCalculator.FibonacciCalculator();
+            _calculator = new FibonacciCalculator.Calculator();
         }
 
         [TestMethod]

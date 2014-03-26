@@ -1,0 +1,25 @@
+﻿@model System.Numerics.BigInteger[]
+@{
+    ViewBag.Title = "Calculate";
+}
+
+<h1>Results for @Model.Length</h1>
+
+@if (Model == null)
+{
+    <p>The results returned null</p>
+}
+else if (Model.Length == 0)
+{
+    <p>There are no results.</p>
+}
+else
+{
+    <ul>
+        @foreach (var result in Model)
+        {
+            <li>@result</li>
+        }
+    </ul>
+}
+

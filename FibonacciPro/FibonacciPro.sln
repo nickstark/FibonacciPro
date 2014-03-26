@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciPro", "FibonacciPro\FibonacciPro.csproj", "{D022D5F8-322D-4A16-8DB8-6303292015CC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{75FB4C84-7374-480F-ABA0-9A78363A28AD}"
@@ -11,6 +13,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciCalculator", "FibonacciCalculator\FibonacciCalculator.csproj", "{D7A4403F-503E-49B3-9B76-FA897141E6AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciCalculatorTest", "FibonacciCalculatorTest\FibonacciCalculatorTest.csproj", "{3A81E037-1B48-4496-AF7C-7DF613E9DECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciPro.Web", "FibonacciPro.Web\FibonacciPro.Web.csproj", "{7888B43D-6EAA-4575-BD59-3270D5288C50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FibonacciPro.Web.Tests", "FibonacciPro.Web.Tests\FibonacciPro.Web.Tests.csproj", "{99B84C67-A8E3-4EC1-99F3-8C1C531AF263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +36,14 @@ Global
 		{3A81E037-1B48-4496-AF7C-7DF613E9DECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A81E037-1B48-4496-AF7C-7DF613E9DECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A81E037-1B48-4496-AF7C-7DF613E9DECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7888B43D-6EAA-4575-BD59-3270D5288C50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7888B43D-6EAA-4575-BD59-3270D5288C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7888B43D-6EAA-4575-BD59-3270D5288C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7888B43D-6EAA-4575-BD59-3270D5288C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B84C67-A8E3-4EC1-99F3-8C1C531AF263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B84C67-A8E3-4EC1-99F3-8C1C531AF263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B84C67-A8E3-4EC1-99F3-8C1C531AF263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B84C67-A8E3-4EC1-99F3-8C1C531AF263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

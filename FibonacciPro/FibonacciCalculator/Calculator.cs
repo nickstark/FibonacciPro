@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace FibonacciCalculator
 {
-    public class FibonacciCalculator : IFibonacciCalculator
+    public class Calculator : IFibonacciCalculator
     {
         public FibonacciResultSet Compute(int len)
         {

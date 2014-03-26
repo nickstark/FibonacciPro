@@ -7,12 +7,12 @@ namespace FibonacciCalculatorTest
     [TestClass]
     public class FibonacciCalculatorTest
     {
-        private FibonacciCalculator.FibonacciCalculator _calculator;
+        private FibonacciCalculator.Calculator _calculator;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _calculator = new FibonacciCalculator.FibonacciCalculator();
+            _calculator = new FibonacciCalculator.Calculator();
         }
 
         [TestMethod]

@@ -48,7 +48,7 @@ namespace FibonacciPro
                 Environment.Exit(1);
             }
 
-            FibonacciCalculator.FibonacciCalculator calc = new FibonacciCalculator.FibonacciCalculator();
+            FibonacciCalculator.Calculator calc = new FibonacciCalculator.Calculator();
             FibonacciResultSet results = calc.Compute(numVal);
 
             HandleOutput(options, results);
